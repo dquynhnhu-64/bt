@@ -1,0 +1,20 @@
+// Grid System
+$grid-columns: 12;
+$gutter: 15px;
+
+// Breakpoints
+$breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px
+);
+
+// Colors
+$bg-primary: #007bff;
+$bg-secondary: #6c757d;
+$bg-light: #f8f9fa;
+$text-dark: #333333;
+$text-white: #ffffff;
+$border-color: #e0e0e0;

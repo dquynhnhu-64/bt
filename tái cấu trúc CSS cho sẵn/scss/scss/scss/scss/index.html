@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid với SASS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="text-align: center; margin: 20px 0;">Hệ Thống Responsive Grid (SASS Refactored)</h1>
+
+        <!-- Row 1: 12 Columns trên Desktop, 1 Column trên Mobile -->
+        <div class="row">
+            <div class="col-12 col-md-4"><div class="demo-box">col-12 col-md-4</div></div>
+            <div class="col-12 col-md-4"><div class="demo-box">col-12 col-md-4</div></div>
+            <div class="col-12 col-md-4"><div class="demo-box">col-12 col-md-4</div></div>
+        </div>
+
+        <!-- Row 2: Tỉ lệ 3 : 9 -->
+        <div class="row">
+            <div class="col-12 col-md-3"><div class="demo-box">col-3</div></div>
+            <div class="col-12 col-md-9"><div class="demo-box">col-9</div></div>
+        </div>
+
+        <!-- Row 3: 4 Cột bằng nhau -->
+        <div class="row">
+            <div class="col-6 col-md-3"><div class="demo-box">Cột 1</div></div>
+            <div class="col-6 col-md-3"><div class="demo-box">Cột 2</div></div>
+            <div class="col-6 col-md-3"><div class="demo-box">Cột 3</div></div>
+            <div class="col-6 col-md-3"><div class="demo-box">Cột 4</div></div>
+        </div>
+    </div>
+
+</body>
+</html>

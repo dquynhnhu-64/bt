@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+@import "grid";
+
+/* Tùy chỉnh Demo Box hiển thị */
+.demo-box {
+  background-color: $bg-primary;
+  color: $text-white;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 4px;
+  @include flex-center;
+  font-weight: bold;
+
+  &:hover {
+    background-color: darken($bg-primary, 10%);
+    transition: background-color 0.3s ease;
+  }
+}

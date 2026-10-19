@@ -1,0 +1,58 @@
+@use "sass:math";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: $text-dark;
+}
+
+.container {
+  width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $key, $value in $breakpoints {
+    @if $value != 0 {
+      @include respond-to($key) {
+        max-width: $value - 30px;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter;
+  margin-left: -$gutter;
+}
+
+// Thiết lập thuộc tính cơ bản cho tất cả các cột
+[class*="col-"] {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+// Tự động sinh ra các lớp cột (col-1 -> col-12, col-md-1 -> col-md-12,...) bằng vòng lặp SASS
+@each $key, $val in $breakpoints {
+  @include respond-to($key) {
+    $infix: if($key == "xs", "", "-#{$key}");
+
+    @for $i from 1 through $grid-columns {
+      .col#{$infix}-#{$i} {
+        flex: 0 0 math.percentage(math.div($i, $grid-columns));
+        max-width: math.percentage(math.div($i, $grid-columns));
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// Mixin xử lý Media Query linh hoạt theo Breakpoint
+@mixin respond-to($breakpoint) {$raw-arg: map-get($breakpoints,$breakpoint);
+
+  @if $raw-arg {
+    @if $raw-arg == 0 {
+      @content;
+    } @else {
+      @media (min-width: $raw-arg) {
+        @content;
+      }
+    }
+  } @else {
+    @error "No value found for `#{$breakpoint}` in $breakpoints map.";
+  }
+}
+
+// Mixin căn giữa Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
